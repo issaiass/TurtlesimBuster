@@ -6,7 +6,7 @@ Note that the preffered language of this tutorial is using
 <img src="https://img.shields.io/badge/-C++-0390fc?style=for-the-badge&logo=c&logoColor=white&labelColor=4B8BBE" />
 
 <p align="center">
-<img src = "https://github.com/issaiass/TurtlesimBuster/blob/master/imgs/turtlesim_buster.PNG?raw=true" width="70%"/>
+<img src = "https://github.com/issaiass/TurtlesimBuster/blob/master/imgs/turtlesim_buster.PNG?raw=true" width="40%"/>
 </p>
 
 <p align = "center">
@@ -411,7 +411,7 @@ Your contributions are always welcome! Please feel free to fork and modify the c
 [<img src="https://img.shields.io/badge/hotmail-%23ffbb00.svg?&style=for-the-badge&logo=hotmail&logoColor=white" />](mailto:issaiass@hotmail.com)
 [<img src="https://img.shields.io/badge/gmail-%23D14836.svg?&style=for-the-badge&logo=gmail&logoColor=white" />](mailto:riawalles@gmail.com)
 
-</p>
+</p
 
 </details>
 
