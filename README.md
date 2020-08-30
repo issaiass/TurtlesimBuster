@@ -6,7 +6,7 @@ Note that the preffered language of this tutorial is using
 <img src="https://img.shields.io/badge/-C++-0390fc?style=for-the-badge&logo=c&logoColor=white&labelColor=4B8BBE" />
 
 <p align="center">
-<img src = "https://github.com/issaiass/TurtlesimBuster/blob/master/imgs/turtlesim_buster.PNG?raw=true" width="40%"/>
+<img src = "https://github.com/issaiass/TurtlesimBuster/blob/master/imgs/turtlesim_buster.PNG?raw=true" width="70%"/>
 </p>
 
 <p align = "center">
@@ -354,7 +354,8 @@ You could see the results on this youtube video.
 
 <p align="center">
 
-[<img src= "https://img.youtube.com/vi/JLOHCpsOIlA/0.jpg" >](https://youtu.be/JLOHCpsOIlA)
+[<img src= "https://img.youtube.com/vi/JLOHCpsOIlA/0.jpg" />](https://youtu.be/JLOHCpsOIlA)
+
 </p>
 
 The video only shows the application running, not the explanation of the code.
@@ -373,7 +374,9 @@ Below a simple image of the application:
 I will try my best for making an explanatory video of the application as in this view.
 
 <p align="center">
+
 [<img src= "https://img.youtube.com/vi/PMTdrLLh_gw/0.jpg" />](https://youtu.be/PMTdrLLh_gw)
+
 </p>
 
 </details>
