@@ -353,7 +353,8 @@ source ~/catkin_ws/devel/setup.bash
 You could see the results on this youtube video.  
 
 <p align="center">
-<img src= "https://img.youtube.com/vi/JLOHCpsOIlA/0.jpg" >
+
+[<img src= "https://img.youtube.com/vi/JLOHCpsOIlA/0.jpg" >](https://youtu.be/JLOHCpsOIlA)
 </p>
 
 The video only shows the application running, not the explanation of the code.
@@ -372,7 +373,7 @@ Below a simple image of the application:
 I will try my best for making an explanatory video of the application as in this view.
 
 <p align="center">
-<img src= "https://img.youtube.com/vi/PMTdrLLh_gw/0.jpg" >
+[<img src= "https://img.youtube.com/vi/PMTdrLLh_gw/0.jpg" />](https://youtu.be/PMTdrLLh_gw)
 </p>
 
 </details>
