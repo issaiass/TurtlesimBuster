@@ -353,14 +353,8 @@ The video only shows the application running, not the explanation of the code.
 
 Below a simple image of the application:
 
-<p align = "center">
-
-<div class="row">
-  <div class="column">
-    <img src = "https://github.com/issaiass/TurtlesimBuster/blob/master/imgs/chasing_turtle.PNG?raw=true" width="70%">
-  </div>
-</div>
-  
+<p align="center">
+<img src = "https://github.com/issaiass/TurtlesimBuster/blob/master/imgs/chasing_turtle.PNG?raw=true" width="50%">
 </p>
 
 </details>
