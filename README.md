@@ -6,7 +6,7 @@ Note that the preffered language of this tutorial is using
 <img src="https://img.shields.io/badge/-C++-0390fc?style=for-the-badge&logo=c&logoColor=white&labelColor=4B8BBE" />
 
 <p align="center">
-<img src = "https://github.com/issaiass/TurtlesimBuster/blob/master/imgs/turtlesim_buster.PNG?raw=true" width="70%"/>
+<img src = "https://github.com/issaiass/TurtlesimBuster/blob/master/imgs/turtlesim_buster.PNG?raw=true" width="40%"/>
 </p>
 
 <p align = "center">
@@ -361,13 +361,7 @@ The video only shows the application running, not the explanation of the code.
 Below a simple image of the application:
 
 <p align = "center">
-
-<div class="row">
-  <div class="column">
-    <img src = "https://github.com/issaiass/TurtlesimBuster/blob/master/imgs/chasing_turtle.PNG?raw=true" width="70%">
-  </div>
-</div>
-  
+<img src = "https://github.com/issaiass/TurtlesimBuster/blob/master/imgs/chasing_turtle.PNG?raw=true" width="50%"/>  
 </p>
 
 </details>
