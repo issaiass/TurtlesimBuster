@@ -2,9 +2,11 @@
 
 <details open>
 <summary> <b>Brief Review<b></summary>
+Note that the preffered language of this tutorial is using 
+<img src="https://img.shields.io/badge/-C++-0390fc?style=for-the-badge&logo=c&logoColor=white&labelColor=4B8BBE" />
 
 <p align="center">
-<img src = "https://github.com/issaiass/TurtlesimBuster/blob/master/imgs/turtlesim_buster.PNG?raw=true" width="35%"/>
+<img src = "https://github.com/issaiass/TurtlesimBuster/blob/master/imgs/turtlesim_buster.PNG?raw=true" width="70%"/>
 </p>
 
 <p align = "center">
@@ -30,6 +32,11 @@ This applications function as follows.
 - **Installed ROS**
 - **Know how to create a workspace**
 - **Have a minimal knowledge of ROS topics, messages, services, launch files**
+
+Quick reference that could help you in your application are [this for implementing the PID controller if you do not remember how](https://gist.github.com/bradley219/5373998) and [this one from the IRIG group of UPC Spain](https://sir.upc.edu/projects/rostutorials/5-client-server_tutorial/index.html).
+
+
+
 
 </details>
 
@@ -353,8 +360,14 @@ The video only shows the application running, not the explanation of the code.
 
 Below a simple image of the application:
 
-<p align="center">
-<img src = "https://github.com/issaiass/TurtlesimBuster/blob/master/imgs/chasing_turtle.PNG?raw=true" width="50%">
+<p align = "center">
+
+<div class="row">
+  <div class="column">
+    <img src = "https://github.com/issaiass/TurtlesimBuster/blob/master/imgs/chasing_turtle.PNG?raw=true" width="70%">
+  </div>
+</div>
+  
 </p>
 
 </details>
