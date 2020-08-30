@@ -4,7 +4,7 @@
 <summary> <b>Brief Review<b></summary>
 
 <p align="center">
-<img src = "https://github.com/issaiass/TurtlesimBuster/blob/master/imgs/turtlesim_buster.PNG?raw=true" width="70%"/>
+<img src = "https://github.com/issaiass/TurtlesimBuster/blob/master/imgs/turtlesim_buster.PNG?raw=true" width="35%"/>
 </p>
 
 <p align = "center">
