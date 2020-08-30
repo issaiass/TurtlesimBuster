@@ -4,9 +4,7 @@
 <summary> <b>Brief Review<b></summary>
 
 <p align="center">
-
-<img src="http://wiki.ros.org/turtlesim?action=AttachFile&do=get&target=turtlesim.png">
-
+<img src = "https://github.com/issaiass/TurtlesimBuster/blob/master/imgs/turtlesim_buster.PNG?raw=true" width="70%"/>
 </p>
 
 <p align = "center">
@@ -28,12 +26,10 @@ This applications function as follows.
 - When the turtle reaches a minimal 'gotcha' distance it will kill the current 'leader' turtle and will spawn a new 'leader' turtle
 - The process repeats indefinitely.
 
-**If you want to run the project directly just go to the section running the code, but you at least have to complete these prerequisites:**
+**If you want to run the project directly just go to the section <Using TurtlesimBuster Package>, but you at least have to complete these prerequisites:**
 - **Installed ROS**
 - **Know how to create a workspace**
 - **Have a minimal knowledge of ROS topics, messages, services, launch files**
-
-[http://wiki.ros.org/turtlesim?action=AttachFile&do=get&target=turtlesim.png]
 
 </details>
 
@@ -150,7 +146,10 @@ In resume the command for launching files is:
 A. RQT Graph
 
 A graph display the connection between nodes and how they communicate each other.
-##### RQT GRAPH #########
+
+<p align="center">
+<img src = "https://github.com/issaiass/TurtlesimBuster/blob/master/imgs/rqt_graph.PNG?raw=true" width="70%"/>
+</p>
 
 1.  For running the graph, open a terminal and write the command `rqt_graph`.
 
@@ -347,21 +346,18 @@ source ~/catkin_ws/devel/setup.bash
 You could see the results on this youtube video.  
 
 <p align="center">
-https://www.youtube.com/watch?v=JLOHCpsOIlA&t=1s
 <img src= "https://img.youtube.com/vi/JLOHCpsOIlA/0.jpg" >
-
 </p>
 
 The video only shows the application running, not the explanation of the code.
 
-Below more images of the application:
+Below a simple image of the application:
 
 <p align = "center">
 
 <div class="row">
   <div class="column">
-    <img src = "https://github.com/issaiass/VisualDatasetBuilder/blob/master/imgs/outputfolder.PNG?raw=true" width="70%">
-    <img src = "https://github.com/issaiass/VisualDatasetBuilder/blob/master/imgs/autodataset.PNG?raw=true"  width="70%">      
+    <img src = "https://github.com/issaiass/TurtlesimBuster/blob/master/imgs/chasing_turtle.PNG?raw=true" width="70%">
   </div>
 </div>
   
@@ -375,8 +371,9 @@ Below more images of the application:
 I will try my best for making an explanatory video of the application as in this view.
 
 <p align="center">
-<img src= "https://img.youtube.com/vi/JLOHCpsOIlA/0.jpg" >
+<img src= "https://img.youtube.com/vi/PMTdrLLh_gw/0.jpg" >
 </p>
+
 </details>
 
 <details open>
