@@ -2,11 +2,11 @@
 
 <details open>
 <summary> <b>Brief Review<b></summary>
+Note that the preffered language of this tutorial is using 
+<img src="https://img.shields.io/badge/-C++-0390fc?style=for-the-badge&logo=c&logoColor=white&labelColor=4B8BBE" />
 
 <p align="center">
-
-<img src="http://wiki.ros.org/turtlesim?action=AttachFile&do=get&target=turtlesim.png">
-
+<img src = "https://github.com/issaiass/TurtlesimBuster/blob/master/imgs/turtlesim_buster.PNG?raw=true" width="40%"/>
 </p>
 
 <p align = "center">
@@ -28,12 +28,15 @@ This applications function as follows.
 - When the turtle reaches a minimal 'gotcha' distance it will kill the current 'leader' turtle and will spawn a new 'leader' turtle
 - The process repeats indefinitely.
 
-**If you want to run the project directly just go to the section running the code, but you at least have to complete these prerequisites:**
+**If you want to run the project directly just go to the section <Using TurtlesimBuster Package>, but you at least have to complete these prerequisites:**
 - **Installed ROS**
 - **Know how to create a workspace**
 - **Have a minimal knowledge of ROS topics, messages, services, launch files**
 
-[http://wiki.ros.org/turtlesim?action=AttachFile&do=get&target=turtlesim.png]
+Quick reference that could help you in your application are [this for implementing the PID controller if you do not remember how](https://gist.github.com/bradley219/5373998) and [this one from the IRIG group of UPC Spain](https://sir.upc.edu/projects/rostutorials/5-client-server_tutorial/index.html).
+
+
+
 
 </details>
 
@@ -150,7 +153,10 @@ In resume the command for launching files is:
 A. RQT Graph
 
 A graph display the connection between nodes and how they communicate each other.
-##### RQT GRAPH #########
+
+<p align="center">
+<img src = "https://github.com/issaiass/TurtlesimBuster/blob/master/imgs/rqt_graph.PNG?raw=true" width="70%"/>
+</p>
 
 1.  For running the graph, open a terminal and write the command `rqt_graph`.
 
@@ -347,24 +353,17 @@ source ~/catkin_ws/devel/setup.bash
 You could see the results on this youtube video.  
 
 <p align="center">
-https://www.youtube.com/watch?v=JLOHCpsOIlA&t=1s
-<img src= "https://img.youtube.com/vi/JLOHCpsOIlA/0.jpg" >
+
+[<img src= "https://img.youtube.com/vi/JLOHCpsOIlA/0.jpg" />](https://youtu.be/JLOHCpsOIlA)
 
 </p>
 
 The video only shows the application running, not the explanation of the code.
 
-Below more images of the application:
+Below a simple image of the application:
 
 <p align = "center">
-
-<div class="row">
-  <div class="column">
-    <img src = "https://github.com/issaiass/VisualDatasetBuilder/blob/master/imgs/outputfolder.PNG?raw=true" width="70%">
-    <img src = "https://github.com/issaiass/VisualDatasetBuilder/blob/master/imgs/autodataset.PNG?raw=true"  width="70%">      
-  </div>
-</div>
-  
+<img src = "https://github.com/issaiass/TurtlesimBuster/blob/master/imgs/chasing_turtle.PNG?raw=true" width="50%"/>  
 </p>
 
 </details>
@@ -375,8 +374,11 @@ Below more images of the application:
 I will try my best for making an explanatory video of the application as in this view.
 
 <p align="center">
-<img src= "https://img.youtube.com/vi/JLOHCpsOIlA/0.jpg" >
+
+[<img src= "https://img.youtube.com/vi/PMTdrLLh_gw/0.jpg" />](https://youtu.be/PMTdrLLh_gw)
+
 </p>
+
 </details>
 
 <details open>
@@ -409,7 +411,7 @@ Your contributions are always welcome! Please feel free to fork and modify the c
 [<img src="https://img.shields.io/badge/hotmail-%23ffbb00.svg?&style=for-the-badge&logo=hotmail&logoColor=white" />](mailto:issaiass@hotmail.com)
 [<img src="https://img.shields.io/badge/gmail-%23D14836.svg?&style=for-the-badge&logo=gmail&logoColor=white" />](mailto:riawalles@gmail.com)
 
-</p>
+</p
 
 </details>
 
