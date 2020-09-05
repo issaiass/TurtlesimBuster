@@ -153,8 +153,8 @@ int main(int argc, char **argv) {
 void moveTo(turtlesim::Pose finish_pose, double tolerance) {
     geometry_msgs::Twist cmd_vel_msg;
     ros::Rate loop_rate(10);
-    vector<double> KpKiKd_distance{2.1, 0.5, 0.1};
-    vector<double> KpKiKd_angle{3.5, 0.01, 0.001};        
+    vector<double> KpKiKd_distance{1.01, 0.2, 0.001};
+    vector<double> KpKiKd_angle{3.5, 0.05, 0.05};        
     double d;
 
     do {
@@ -263,10 +263,8 @@ double PID_angle(std::vector<double> Ks, turtlesim::Pose setpoint_pose, turtlesi
     double error_theta = atan2(setpoint_pose.y - turtle_pose.y, setpoint_pose.x - turtle_pose.x) - turtle_pose.theta;
     double u = Kp*error_theta + Ki*error_theta*dt + Kd*(error_theta - prev_error_theta)/dt;
     prev_error_theta = error_theta;
-    if (u > 15)
-        u = 15;
-    if (u < -15)
-        u = -15;
+    u = u >  4*M_PI? 4*M_PI:u;
+    u = u < -4*M_PI?-4*M_PI:u;
     return u;
 }
 
