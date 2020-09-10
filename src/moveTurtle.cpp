@@ -20,13 +20,13 @@
 *                     NECCESARY HEADER FILES FOR THE APPLICATION
 *******************************************************************************
 */
-#include "ros/ros.h"               // include ros essentials package
-#include "geometry_msgs/Twist.h"   // for turtlesim msg of topic cmd_vel 
-#include "geometry_msgs/Pose.h"    // for turtlesim msg of topic pose
-#include "turtlesim/Pose.h"        // for turtlesim topic cmd_vel
-#include "turtlesim/Spawn.h"       // for turtlesim service spawn
-#include "turtlesim/Kill.h"        // for turtlesim service kill
-#include "math.h"                  // for math function atan2
+#include <ros/ros.h>               // include ros essentials package
+#include <geometry_msgs/Twist.h>   // for turtlesim msg of topic cmd_vel 
+#include <geometry_msgs/Pose.h>    // for turtlesim msg of topic pose
+#include <turtlesim/Pose.h>        // for turtlesim topic cmd_vel
+#include <turtlesim/Spawn.h>       // for turtlesim service spawn
+#include <turtlesim/Kill.h>        // for turtlesim service kill
+#include <math.h>                  // for math function atan2
 
 /*
 *******************************************************************************
@@ -73,7 +73,7 @@ turtlesim::Kill::Response kill_resp;
 void poseCallback(const turtlesim::Pose::ConstPtr &pose_msg);
 
 // function to move the turtle to a goal pose due to a tolerance of finalziation
-void moveTo(turtlesim::Pose goal_pose, double tolerance);
+void moveTo(turtlesim::Pose goal_pose, double tolerancem);
 
 // A PID model for distnce
 double PID_distance(std::vector<double> Ks, turtlesim::Pose setpoint_pose, turtlesim::Pose turtle_pose, double dt);
@@ -110,17 +110,16 @@ int main(int argc, char **argv) {
   // make the service to the kill client
   kill_client = n.serviceClient<turtlesim::Kill>("/kill");
 
-
-
   turtlesim::Pose goal_pose;          // local variable to the goal pose  
   while(true) {                       // chasing turtles forever
     // make the random pose to be between 0-12
     goal_pose.x = random() % 12;      
     goal_pose.y = random() % 12;
     
+     
     spawnTurtle(goal_pose);           // spawn a new turtle and make that the 
                                       // goal position
-    moveTo(goal_pose, 0.1);           // do microsteps to move the turtle
+    moveTo(goal_pose, 0.1);       // do microsteps to move the turtle
     killTurtle();                     // kill the leader turtle
   }
   return 0;                           // exit the main function
@@ -156,12 +155,19 @@ void moveTo(turtlesim::Pose finish_pose, double tolerance) {
     vector<double> KpKiKd_distance{1.01, 0.2, 0.001};
     vector<double> KpKiKd_angle{3.5, 0.05, 0.05};        
     double d;
-
+    double dt;
+    ros::Time start = ros::Time::now();
+    ros::Time end = ros::Time::now() + ros::Duration(0.1);
     do {
+        end = ros::Time::now();
+        dt = end.toSec() - start.toSec();
+        dt = dt < (1.0/10)*(0.05)?0.1:dt; // if the dt is 95% below 0.1 clip to 0.1
+        cout << dt << endl;
         d = PID_distance(KpKiKd_distance, finish_pose, turtle_pose, 1.0/10);
+        start = ros::Time::now();
         cmd_vel_msg.linear.x = d; 
         cmd_vel_msg.angular.z = PID_angle(KpKiKd_angle, finish_pose, turtle_pose, 1.0/10);
-        cmd_vel_pub.publish(cmd_vel_msg);  
+        cmd_vel_pub.publish(cmd_vel_msg);
         ros::spinOnce();
         loop_rate.sleep();
     } while (d > tolerance);
@@ -216,18 +222,21 @@ void poseCallback(const turtlesim::Pose::ConstPtr &pose_msg) {
 */
 
 double PID_distance(std::vector<double> Ks, turtlesim::Pose setpoint_pose, turtlesim::Pose turtle_pose, double dt) {
-    static double prev_error_d = 0;
-    turtlesim::Pose error;
+    turtlesim::Pose e;
+    static double prev_error;
+    static double derror;
+    
     double Kd = Ks.back(); Ks.pop_back();
     double Ki = Ks.back(); Ks.pop_back();
     double Kp = Ks.back(); Ks.pop_back();
 
-    error.x = setpoint_pose.x - turtle_pose.x;
-    error.y = setpoint_pose.y - turtle_pose.y;
-    double error_d = sqrt(pow(error.x,2) + pow(error.y,2));
+    e.x = setpoint_pose.x - turtle_pose.x;
+    e.y = setpoint_pose.y - turtle_pose.y;
+    double error = sqrt(pow(e.x,2) + pow(e.y,2));
 
-    double u = Kp*error_d + Ki*error_d*dt + Kd*(error_d - prev_error_d)/dt;
-    prev_error_d = error_d;
+    derror = error - prev_error;    
+    double u = Kp*error + Ki*error*dt + Kd*derror/dt;
+    prev_error = error;
     return u;
 }
 
@@ -256,13 +265,20 @@ double PID_distance(std::vector<double> Ks, turtlesim::Pose setpoint_pose, turtl
 */
 
 double PID_angle(std::vector<double> Ks, turtlesim::Pose setpoint_pose, turtlesim::Pose turtle_pose, double dt) {
-    static double prev_error_theta;
+    turtlesim::Pose e;
+    static double prev_error;
+    static double derror;
+
     double Kd = Ks.back(); Ks.pop_back();
     double Ki = Ks.back(); Ks.pop_back();
     double Kp = Ks.back(); Ks.pop_back();
-    double error_theta = atan2(setpoint_pose.y - turtle_pose.y, setpoint_pose.x - turtle_pose.x) - turtle_pose.theta;
-    double u = Kp*error_theta + Ki*error_theta*dt + Kd*(error_theta - prev_error_theta)/dt;
-    prev_error_theta = error_theta;
+    
+    double error = atan2(setpoint_pose.y - turtle_pose.y, setpoint_pose.x - turtle_pose.x) - turtle_pose.theta;
+    derror = error - prev_error;
+    double u = Kp*error + Ki*error*dt + Kd*derror/dt;
+    
+    prev_error = error;
+    
     u = u >  4*M_PI? 4*M_PI:u;
     u = u < -4*M_PI?-4*M_PI:u;
     return u;
